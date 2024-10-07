@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: billing-app
+  labels:
+    app: billing-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: billing-app
+  template:
+    metadata:
+      labels:
+        app: billing-app
+    spec:
+      containers:
+      - name: billing-app
+        image: <JFROG_ARTIFACTORY_IMAGE>
+        ports:
+        - containerPort: 8080

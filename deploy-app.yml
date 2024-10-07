@@ -1,0 +1,6 @@
+- hosts: eks_nodes
+  tasks:
+    - name: Deploy app to EKS
+      kubernetes:
+        kubeconfig: /path/to/kubeconfig
+        definition: /path/to/k8s/deployment.yaml
